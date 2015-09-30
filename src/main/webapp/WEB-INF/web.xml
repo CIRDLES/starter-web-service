@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+
+    <servlet>
+        <!-- use Jersey as the JAX-RS implementation -->
+        <servlet-name>jersey</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+
+        <!-- specify all resources (comma-separated) -->
+        <init-param>
+            <param-name>jersey.config.server.provider.classnames</param-name>
+            <param-value>org.cirdles.string.api.StringResource</param-value>
+        </init-param>
+
+        <!-- whether servlet should start immediately and automatically -->
+        <!-- almost always should be 1 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- maps urls starting with /api/ to the Jersey servlet -->
+    <!-- means string/reverse in a resource is mapped by /api/string/reverse -->
+    <servlet-mapping>
+        <servlet-name>jersey</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+</web-app>
