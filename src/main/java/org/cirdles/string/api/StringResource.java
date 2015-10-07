@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * A resource is a collection of related HTTP endpoints. This class is a
  * resource comprised of string operations.
- * <p/>
+ * <p>
  * Each method in this class corresponds to a single endpoint. Each endpoint's
  * path is a combination of class and method {@link Path} annotations (i.e.
  * {@code "string/reverse"} from {@code @Path("string")} on this class and
@@ -18,13 +18,13 @@ import javax.ws.rs.core.MediaType;
  * (i.e. Jetty or Tomcat). Each endpoint's HTTP verb is specified by its
  * method's {@link javax.ws.rs.DELETE}, {@link javax.ws.rs.GET}, {@link POST},
  * or {@link javax.ws.rs.PUT} annotation.
- * <p/>
+ * <p>
  * Endpoints should also specify expected and provided
  * <a href="https://en.wikipedia.org/wiki/Media_type">media types</a>. These are
  * given using the {@link Produces} and {@link Consumes} annotations. An
  * endpoint's set of media types comes from both its method's and its class's
  * annotations.
- * <p/>
+ * <p>
  * Notice that this class's only imports are from the package
  * {@link javax.ws.rs}. This package provides the
  * <a href="https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services">
@@ -32,7 +32,7 @@ import javax.ws.rs.core.MediaType;
  * specifying web resources. In this project, it is implemented by Jersey, the
  * reference implementation for JAX-RS. Jersey connects to its resources through
  * {@code src/main/webapp/WEB-INF/web.xml}.
- * <p/>
+ * <p>
  * This resource delegates it logic to {@link StringService}. Doing this makes
  * this class more readable and makes the logic quickly and easily testable. It
  * is recommended that other projects follow this pattern as a best practice.

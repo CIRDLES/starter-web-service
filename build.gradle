@@ -1,6 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'jetty'
 
+javadoc {
+    classpath = sourceSets.test.compileClasspath
+    source = sourceSets.main.allJava.plus(sourceSets.test.allJava)
+}
+
 jettyRun {
     // the default is to prepend all urls with the project name
     contextPath = ''

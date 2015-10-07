@@ -16,13 +16,13 @@ import static org.junit.Assert.assertThat;
  * Integration tests (IT) for {@link StringResource}. The purpose of these
  * tests is not to be exhaustive, but to check each endpoint, focusing on the
  * HTTP response status and media type.
- * <p/>
+ * <p>
  * Note that this integration test class differs from typical JUnit integration
  * test classes in two ways. First, this class extends {@link JerseyTest}, which
  * provides utilities for starting and interacting with a test server. Second,
  * this class has the method {@link #configure()}, which specifies the resource
  * to be used in conjunction with these integration tests.
- * <p/>
+ * <p>
  * To verify content correctness, create a second class containing the logic
  * backing the resource and write separate unit tests for that class.
  *
